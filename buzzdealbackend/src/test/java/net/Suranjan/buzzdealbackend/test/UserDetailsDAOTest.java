@@ -20,7 +20,7 @@ static UserDetailsDAO userdetailsDAO;
     public static void preExcecution()
 	{
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
-		context.scan("net.Suranjan");
+		context.scan("net.Suranjan.buzzdealbackend");
 		context.refresh();
 	    userdetailsDAO=(UserDetailsDAO) context.getBean("userDetailsDAO");
 	}

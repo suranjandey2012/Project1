@@ -9,11 +9,13 @@
 	<url>http://maven.apache.org</url>
 	<dependencies>
 
-		<dependency>
+       <dependency>
 			<groupId>net.Suranjan</groupId>
 			<artifactId>buzzdealbackend</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+       
+		
 
 		<!-- Servlet Api Dependency -->
 		<dependency>
@@ -43,14 +45,8 @@
 			<artifactId>spring-web</artifactId>
 			<version>4.3.6.RELEASE</version>
 		</dependency>
+
 		
-		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.193</version>
-			<scope>test</scope>
-		</dependency>
 
 		<!-- Spring-webmvc -->
 		<dependency>

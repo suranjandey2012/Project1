@@ -23,7 +23,7 @@ static ProductDAO productDAO;
     public static void preExcecution()
 	{
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
-		context.scan("net.Suranjan");
+		context.scan("net.Suranjan.buzzdealbackend");
 		context.refresh();
 	    productDAO=(ProductDAO) context.getBean("productDAO");
 	}

@@ -20,18 +20,18 @@ public class CategoryDAOTest {
 	@BeforeClass
 	public static void preExecution() {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-		context.scan("net.Suranjan");
+		context.scan("net.Suranjan.buzzdealbackend");
 		context.refresh();
 
 		categoryDAO = (CategoryDAO) context.getBean("categoryDAO");
 	}
 
-	@Ignore
+	
 	@Test
 	public void insertCategoryTest() {
 		Category category = new Category();
-		category.setCategoryName("Samsung");
-		category.setCategoryDesc("Samsung Mobile");
+		category.setCategoryName("Google");
+		category.setCategoryDesc("Pixel Mobile");
 
 		assertTrue("Problem in Adding Category", categoryDAO.insertCategory(category));
 	}
@@ -51,7 +51,7 @@ public class CategoryDAOTest {
 		assertTrue("Failed To Delete The Category", categoryDAO.deleteCategory(category));
 	}
 
-	
+	@Ignore
 	@Test
 	public void listCategoryTest() {
 		List<Category> listCategories = categoryDAO.getCategorylist();

@@ -23,7 +23,7 @@ static SupplierDAO supplierDAO;
     public static void preExcecution()
 	{
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
-		context.scan("net.Suranjan");
+		context.scan("net.Suranjan.buzzdealbackend");
 		context.refresh();
 	    supplierDAO=(SupplierDAO) context.getBean("supplierDAO");
 	}

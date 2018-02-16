@@ -1,6 +1,6 @@
 package net.Suranjan.buzzdealbackend.dao;
 
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
