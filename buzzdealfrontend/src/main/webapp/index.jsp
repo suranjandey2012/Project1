@@ -1,5 +1,14 @@
 <html>
+<head>
+
+
+<title>Home Page</title>
+
+</head>
+
+
 <body>
-<h2>Hello World!</h2>
+<%@ include file ="./WEB-INF/views/Header.jsp"%>
+<h1 align="center">Home Page</h1>
 </body>
 </html>
