@@ -9,13 +9,22 @@
 	<url>http://maven.apache.org</url>
 	<dependencies>
 
-       <dependency>
+		<dependency>
 			<groupId>net.Suranjan</groupId>
 			<artifactId>buzzdealbackend</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-       
-		
+
+
+		<!-- jstl Dependency -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+
+
 
 		<!-- Servlet Api Dependency -->
 		<dependency>
@@ -46,7 +55,7 @@
 			<version>4.3.6.RELEASE</version>
 		</dependency>
 
-		
+
 
 		<!-- Spring-webmvc -->
 		<dependency>
