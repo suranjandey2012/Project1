@@ -63,9 +63,9 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 
 	@Override
-	public Product getProduct(int ProductId) {
+	public Product getProduct(int productId) {
 		Session session=sessionFactory.openSession();
-    	Product c=(Product) session.get(Product.class,ProductId);
+    	Product c=(Product) session.get(Product.class,productId);
     	session.close();
 		return c;
 		
@@ -83,8 +83,8 @@ public class ProductDAOImpl implements ProductDAO {
     		System.out.print(p.getProductId()+" ");
     	    System.out.print(p.getProductName()+" ");
     	    System.out.print(p.getProductDesc()+" ");
-    	    System.out.print(p.getSupplier()+" ");
-    	    System.out.print(p.getCategory()+" ");
+    	    System.out.print(p.getSupplierId()+" ");
+    	    System.out.print(p.getCategoryId()+" ");
     	    System.out.print(p.getPrice()+" ");
     	    System.out.println(p.getStock());
     	}

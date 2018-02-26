@@ -8,7 +8,7 @@
 
 
 <body>
-<%@ include file ="./WEB-INF/views/Header.jsp"%>
+<%@ include file ="Header.jsp"%>
 <h1 align="center">Home Page</h1>
 </body>
 </html>

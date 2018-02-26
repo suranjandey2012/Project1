@@ -10,13 +10,13 @@ import javax.persistence.Table;
 public class Product {
 	@Id
 	@GeneratedValue
-	private int ProductId;
-	private String ProductName;
+	private int productId;
+	private String productName;
 	private String productDesc;
 	
      
-	private String category;
-	private String supplier;
+	private int categoryId;
+	private int supplierId;
 	
 	private int price;
 	private int stock;
@@ -25,16 +25,16 @@ public class Product {
 	
 	
 	public int getProductId() {
-		return ProductId;
+		return productId;
 	}
 	public void setProductId(int productId) {
-		ProductId = productId;
+		productId = productId;
 	}
 	public String getProductName() {
-		return ProductName;
+		return productName;
 	}
 	public void setProductName(String productName) {
-		ProductName = productName;
+		this.productName = productName;
 	}
 	public String getProductDesc() {
 		return productDesc;
@@ -42,17 +42,17 @@ public class Product {
 	public void setProductDesc(String productDesc) {
 		this.productDesc = productDesc;
 	}
-	public String getCategory() {
-		return category;
+	public int getCategoryId() {
+		return categoryId;
 	}
-	public void setCategory(String category) {
-		this.category = category;
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
-	public String getSupplier() {
-		return supplier;
+	public int getSupplierId() {
+		return supplierId;
 	}
-	public void setSupplier(String supplier) {
-		this.supplier = supplier;
+	public void setSupplierId(int supplierId) {
+		this.supplierId = supplierId;
 	}
 	public int getPrice() {
 		return price;

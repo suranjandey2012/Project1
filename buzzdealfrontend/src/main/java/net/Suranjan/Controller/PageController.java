@@ -36,9 +36,13 @@ public class PageController {
 		return "index";
 	}
 	
+	@RequestMapping("/index")
+    public String showBackHomePage()
+	{
+		return "index";
+	}
 	
-    
-    
-    
+	
+	    
 
 }

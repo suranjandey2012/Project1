@@ -28,43 +28,43 @@ static ProductDAO productDAO;
 	    productDAO=(ProductDAO) context.getBean("productDAO");
 	}
 	
-	@Ignore 
+	@Ignore
     @Test
     public void insertProductTest()
     {
 	  Product product=new Product();
-	  product.setProductName("Nikon Coolpix");
-	  product.setProductDesc("500 Megapixcel Camera");
-	  product.setCategory("Camera");
-	  product.setSupplier("Nikon");
-	  product.setPrice(56000);
+	  product.setProductName("Samsung Galaxy A7");
+	  product.setProductDesc("4G Qualcom Processor");
+	  product.setCategoryId(34);
+	  product.setSupplierId(22);
+	  product.setPrice(25000);
 	  product.setStock(30);
 	  assertTrue("Failed To Add Product",productDAO.insertProduct(product));
     }
    
-   @Ignore
+   
    @Test 
    public void deleteProductTest()
     {
-	   Product product=productDAO.getProduct(1);
+	   Product product=productDAO.getProduct(5);
 	   assertTrue("Failed To Delete The Supplier",productDAO.deleteProduct(product));
      }
    
-   @Ignore
+   @Ignore  
    @Test 
    public void updateProductTest()
     {
       Product product=productDAO.getProduct(1);
       product.setProductName("HCL");
 	  product.setProductDesc("Core I7 processor with 8Gb RAM ");
-	  product.setCategory("Laptop");
-	  product.setSupplier("HCL");
+	  product.setCategoryId(34);
+	  product.setSupplierId(2);
 	  product.setPrice(63000);
 	  product.setStock(15);
       assertTrue("Failed To Update Product",productDAO.updateProduct(product));
   }
  
-   	
+   @Ignore
    @Test 
    public void listProductTest()
     {

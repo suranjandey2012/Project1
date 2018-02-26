@@ -10,7 +10,7 @@
 <%@ page isELIgnored="false" %>
 </head>
 <body>
-<%@ include file="Header.jsp"%>
+
 <h1 align="center">Update Category Page</h1>
 	<br><br>
 	<form action="<c:url value='/UpdateCategory' />"  method="post" >
