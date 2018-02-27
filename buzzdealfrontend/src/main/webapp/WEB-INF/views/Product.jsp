@@ -12,7 +12,7 @@
 </head>
 <body>
  <%@ include file="Header.jsp"%>
-	<form:form action="InsertProduct" modelAttribute="product" method="post">
+	<form:form action="InsertProduct" modelAttribute="product" method="post" enctype="multipart/form-data">
 		<br>
 		<br>
 		<br>
@@ -34,8 +34,11 @@
 				<td><form:input path="stock" /></td>
 			</tr>
 			<tr bgcolor="#EAA911">
-				<td>CategoryId</td>
-				<td><form:input path="categoryId" /></td>
+				<td>Category</td>
+				<td><form:select path="categoryId">
+				<form:option value="0" label="--SelectList--"/>
+				<form:options items="${catlist}"/>
+				</form:select></td>
 			</tr>
 			<tr bgcolor="#EAA911">
 				<td>SupplierId</td>
@@ -50,9 +53,16 @@
 						<input type="submit" value="Insert">
 					</center></td>
 			</tr>
-
-		</table>
+			<!-- File Element For Image Upload  -->
+			<tr>
+			<td>Product Image</td>
+			<td><form:input type="file" path="pimage"/></td>
+			</tr>
+			</table>
 	</form:form>
+	
+	<font color="red">${errorInfo}</font>
+	
 	
 <br><br><br><br>
 <table align="center">
@@ -65,6 +75,7 @@
 <td>Stock</td>
 <td>Price</td>
 <td>Category Operations</td>
+<td>Image</td>
 </tr>
 
 <c:forEach items="${listProducts}"  var="prod">
@@ -78,6 +89,9 @@
 <td>${prod.price}</td>
 <td><a href="<c:url value='/updateProduct/${prod.productId}'/>">UPDATE</a>
 &nbsp;<a href="<c:url value='/deleteProduct/${prod.productId}'/>">DELETE</a></td>
+<td>
+<img src="<c:url value="/resources/images/${prod.productId}.jpg"/>" width="50" height="50"/>
+</td>
 </tr>
 </c:forEach>
 </table>	
