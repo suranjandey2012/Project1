@@ -1,0 +1,203 @@
+Working with Product
+=======================
+
+Product.jsp
+===============
+<%@ page language="java" contentType="text/html"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<html>
+<head>
+<title>Product Page- Mobitel</title>
+</head>
+<body>
+
+	<form:form action="InsertProduct" modelAttribute="product">
+		<table align="center">
+			<tr>
+				<td colspan="2"><center>Product Details</center></td>
+			</tr>
+			<tr>
+				<td>Product ID</td>
+				<td><form:input path="prodid" /></td>
+			</tr>
+			<tr>
+				<td>Product Name</td>
+				<td><form:input path="prodname" /></td>
+			</tr>
+			<tr>
+				<td>Category</td>
+				<td><form:select path="catid">
+						<form:option value="0" label="------Select----" />
+						<form:options items="${catlist}" />
+					</form:select>
+				</td>
+			</tr>
+			<tr>
+				<td>Supplier</td>
+				<td><form:input path="suppid" /></td>
+			</tr>
+			<tr>
+				<td>Price</td>
+				<td><form:input path="price" /></td>
+			</tr>
+			<tr>
+				<td>Stock</td>
+				<td><form:input path="stock" /></td>
+			</tr>
+			<tr>
+				<td>Product Desc</td>
+				<td><form:textarea path="desc" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><center>
+						<input type="submit" />
+					</center></td>
+			</tr>
+
+		</table>
+	</form:form>
+
+	<table align="center">
+		<tr bgcolor="pink">
+			<td>Product ID</td>
+			<td>Product Name</td>
+			<td>Category ID</td>
+			<td>Supplier ID</td>
+			<td>Price</td>
+			<td>Stock</td>
+			<td>Operation</td>
+		</tr>
+
+		<c:forEach items="${proddet}" var="prod">
+			<tr bgcolor="cyan">
+				<td>${prod.prodid}</td>
+				<td>${prod.prodname}</td>
+				<td>${prod.catid}</td>
+				<td>${prod.suppid}</td>
+				<td>${prod.price}</td>
+				<td>${prod.stock}</td>
+				<td><a href="<c:url value="deleteProduct/${prod.prodid}"/>">Delete</a>
+					<a href="<c:url value="updateProduct/${prod.prodid}"/>">Update</a>
+				</td>
+			</tr>
+		</c:forEach>
+
+	</table>
+
+
+</body>
+</html>
+
+
+ProductController.java
+======================
+package com.mobitel.MobitelFrontend.controller;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.mobitel.MobitelBackend.model.*;
+import com.mobitel.MobitelBackend.dao.*;
+
+@Controller
+public class ProductController 
+{
+	@Autowired
+	ProductDAO productDAO;
+	
+	@Autowired
+	CategoryDAO categoryDAO;
+	
+	@RequestMapping(value="Product")
+	public String showProduct(Model m)
+	{
+		Product product = new Product();
+		m.addAttribute(product);
+		
+		List<Product> list=productDAO.retrieveProduct();
+		m.addAttribute("proddet",list);
+		
+		m.addAttribute("catlist",this.getCategories());
+		return "Product";
+	}
+	
+	@RequestMapping(value="InsertProduct",method=RequestMethod.POST)
+	public String insertProduct(@ModelAttribute("product") Product product,Model m)
+	{
+		productDAO.insertProduct(product);
+		
+		Product product1 = new Product();
+		m.addAttribute(product1);
+		
+		List<Product> list=productDAO.retrieveProduct();
+		m.addAttribute("proddet",list);
+		
+		return "Product";
+	}
+	
+	@RequestMapping(value="deleteProduct/{prodid}",method=RequestMethod.GET)
+	public String deleteProduct(@PathVariable("prodid")int prodid,Model m)
+	{
+		
+		productDAO.deleteProduct(prodid);
+		
+		Product product1 = new Product();
+		m.addAttribute(product1);
+		
+		List<Product> list=productDAO.retrieveProduct();
+		m.addAttribute("proddet",list);
+		
+		return "Product";
+	}
+	
+	@RequestMapping(value="updateProduct/{prodid}",method=RequestMethod.GET)
+	public String readyUpdate(@PathVariable("prodid")int prodid,Model m)
+	{
+		Product product=productDAO.getProduct(prodid);
+		m.addAttribute(product);
+		
+		List<Product> list=productDAO.retrieveProduct();
+		m.addAttribute("proddet",list);
+		
+		return "UpdateProduct";
+	}
+	
+	@RequestMapping(value="UpdateProduct",method=RequestMethod.POST)
+	public String updateProduct(@ModelAttribute("product") Product product,Model m)
+	{
+		productDAO.updateProduct(product);
+		
+		Product product1 = new Product();
+		m.addAttribute(product1);
+		
+		List<Product> list=productDAO.retrieveProduct();
+		m.addAttribute("proddet",list);
+		
+		return "redirect:/Product";
+	}
+	
+	public LinkedHashMap<Integer,String> getCategories()
+	{
+		List<Category> list=categoryDAO.retrieve();
+		
+		LinkedHashMap<Integer,String> catlist=new LinkedHashMap<Integer,String>();
+		
+		for(Category cat:list)
+		{
+			catlist.put(cat.getCatid(),cat.getCatname());
+		}
+		
+		return catlist;
+	}
+}
+
+

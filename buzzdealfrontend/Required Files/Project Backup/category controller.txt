@@ -1,0 +1,26 @@
+package net.suranjan.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class CategoryController {
+
+	@RequestMapping("/category")
+	public String showCategory()
+	{
+		return "Category";
+	}
+	
+	@RequestMapping(value="/InsertCategory",method=RequestMethod.POST)
+	public String addCategory(@RequestParam("catname")String catname,@RequestParam("catdesc")String catDesc)
+	{
+	 System.out.println("Category Name:"+catname);
+	 System.out.println("Category Desc:"+catDesc);
+	 return "Category";
+	 
+	}
+	
+}

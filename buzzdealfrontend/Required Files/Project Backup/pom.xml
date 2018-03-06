@@ -1,31 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.Suranjan</groupId>
-	<artifactId>buzzdealfrontend</artifactId>
+	<groupId>net.suranjan</groupId>
+	<artifactId>buzzdealFrontend</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>buzzdealfrontend Maven Webapp</name>
+	<name>buzzdealFrontend Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
-
-		<dependency>
-			<groupId>net.Suranjan</groupId>
-			<artifactId>buzzdealbackend</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
-
-		<!-- jstl Dependency -->
-		<dependency>
-			<groupId>jstl</groupId>
-			<artifactId>jstl</artifactId>
-		</dependency>
-
-
-
-
-		<!-- Servlet Api Dependency -->
+    <!-- Servlet Api Dependency -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -54,8 +37,6 @@
 			<version>4.3.6.RELEASE</version>
 		</dependency>
 
-
-
 		<!-- Spring-webmvc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -64,36 +45,8 @@
 		</dependency>
 
 
-		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.5</version>
-		</dependency>
-
-
-		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
-		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>1.3.2</version>
-		</dependency>
-
-
-
-
-
 	</dependencies>
 	<build>
-		<finalName>buzzdealfrontend</finalName>
+		<finalName>buzzdealFrontend</finalName>
 	</build>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>jstl</groupId>
-				<artifactId>jstl</artifactId>
-				<version>1.2</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 </project>
