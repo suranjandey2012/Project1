@@ -5,10 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login Page</title>
+
+
 </head>
 <body>
 
 <%@ include file="Header.jsp"%>
 <h1 align="center">Login Page</h1>
+
+
+<%@ include file="Footer.jsp"%>
+
 </body>
+
+
 </html>

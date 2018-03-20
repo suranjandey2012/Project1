@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Register Page</title>
+<title>Insert title here</title>
 </head>
 <body>
-<%@ include file="Header.jsp"%>
-<h1 align="center">Register Page</h1>
-<%@ include file="Footer.jsp"%>
+
 </body>
 </html>

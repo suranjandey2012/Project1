@@ -25,22 +25,22 @@ static UserDetailsDAO userdetailsDAO;
 	    userdetailsDAO=(UserDetailsDAO) context.getBean("userDetailsDAO");
 	}
 	
-	@Ignore 
+	
     @Test
     public void RegisterUserTest()
     {
 	  UserDetails usd=new UserDetails();
-	  usd.setCustomerName("Sandip Sharma");
+	  usd.setCustomerName("Samir Das");
 	  usd.setAddress("Kolkata");
-	  usd.setPassword("sandip@345");
-	  usd.setRole("Admin");
+	  usd.setPassword("samir@245");
+	  usd.setRole("ROLE_USER");
 	  usd.setEnabled(true);
-	  usd.setEmailId("sandipswagger@gmail.com");
+	  usd.setEmailId("samir@gmail.com");
 	  
 	  assertTrue("Failed To Register User",userdetailsDAO.RegisterUser(usd));
     }
 	
-	   @Ignore 
+       @Ignore    
 	   @Test 
 	   public void updateUserTest()
 	    {
@@ -48,13 +48,13 @@ static UserDetailsDAO userdetailsDAO;
 	      usd.setCustomerName("Suranjan Dey");
 		  usd.setAddress("Kolkata");
 		  usd.setPassword("SD@1997");
-		  usd.setRole("Admin");
+		  usd.setRole("ROLE_ADMIN");
 		  usd.setEnabled(true);
 		  usd.setEmailId("suranjandey2012@gmail.com");
 		  assertTrue("Failed To Update User",userdetailsDAO.UpdateUser(usd));
 	  }
 	   
-	   
+       @Ignore 
 	   @Test 
 	   public void ApproveUserTest()
 	    {

@@ -9,5 +9,6 @@
 <body>
 <%@ include file="Header.jsp"%>
 <h1 align="center">ContactUs Page</h1>
+<%@ include file="Footer.jsp"%>
 </body>
 </html>

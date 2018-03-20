@@ -29,6 +29,7 @@ import net.Suranjan.buzzdealbackend.model.UserDetails;
 @Configuration
 @EnableTransactionManagement
 public class DbConfig {
+	@Bean(name="dataSource")
 	public DataSource getH2DataSource()
 	{
 		DriverManagerDataSource dataSource=new DriverManagerDataSource();

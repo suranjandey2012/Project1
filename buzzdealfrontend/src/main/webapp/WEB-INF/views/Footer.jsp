@@ -4,11 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Register Page</title>
 </head>
 <body>
-<%@ include file="Header.jsp"%>
-<h1 align="center">Register Page</h1>
-<%@ include file="Footer.jsp"%>
+<div class="navbar navbar-default navbar-fixed bottom">
+<div class="container">
+<p><strong>© 2018 BuzzDeal Inc All Rights Reserved</strong></p>
+<p class="navbar-textpull-left">
+© 2018-Site Built By <b>Suranjan Dey</b>
+<a href="https://spring.io/">Spring Framework</a>
+</p>
+</div>
+</div>
 </body>
 </html>

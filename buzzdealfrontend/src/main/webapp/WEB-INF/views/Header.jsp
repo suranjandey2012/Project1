@@ -1,9 +1,57 @@
-<center>
-<a href="index">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="login">Login</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="register">Register</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="aboutus">AboutUs</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="contactus">ContactUs</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="category">Category Page</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="product">Product Page</a>&nbsp;&nbsp;
-</center>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+#headpane
+{
+
+ background-color:#4169E1;
+ height:40px;
+ 
+
+
+}
+
+
+</style>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+</head>
+
+<body>
+<div id="headpane" class="container">
+<p align="right">
+<a href="https://www.facebook.com/"><img src="<c:url value="/resources/images/Facebook_icon.jpg"/>" width="30" height="30"/></a>
+&nbsp;
+<a href="https://www.google.com/gmail/about/"><img src="<c:url value="/resources/images/google-plus.jpg"/>" width="40" height="30"/></a>
+&nbsp;
+<a href="https://github.com/"><img src="<c:url value="/resources/images/image4.png"/>" width="30" height="30"/></a>
+</p>
+</div>
+<br/>
+
+<div class="container">
+<nav class="navbar navbar-inverse">
+  
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">BuzzDeal</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index">Home</a></li>
+      <li><a href="login">Login</a></li>
+      <li><a href="register">Register</a></li>
+      <li><a href="aboutus">AboutUs</a></li>
+      <li><a href="contactus">ContactUs</a></li>
+      <li><a href="category">Category Page</a></li>
+      <li><a href="product">Product Page</a></li>
+    </ul>
+</nav>
+</div>
+
+</body>
+
+</html>

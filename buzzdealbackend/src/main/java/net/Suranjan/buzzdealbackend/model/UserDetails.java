@@ -9,9 +9,9 @@ import javax.persistence.Table;
 @Table(name="UserDetail")
 public class UserDetails {
 
-	@Id
-    @GeneratedValue
-		private String username;
+	    @Id
+	    @GeneratedValue
+        private String username;
 		private String password;
 		private String CustomerName;
 		private String Role;
