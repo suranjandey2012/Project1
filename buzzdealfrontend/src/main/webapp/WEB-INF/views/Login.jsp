@@ -13,6 +13,29 @@
 <%@ include file="Header.jsp"%>
 <h2 align="center">Sign In Here </h2>
 
+<form action="perform_login" method="post">
+ <table align="center">
+  <tr> 
+    <td colspan="2"><center>Login Credential</center></td>
+  </tr>
+   
+   <tr>
+     <td>Username:</td>
+     <td><input type="text" name="username"/></td>
+   </tr>
+  
+  <tr>
+     <td>Password:</td>
+     <td><input type="text" name="password"/></td>
+   </tr>
+  
+  <tr>
+    <td colspan="2"><input type="submit" value="Submit"/></td>
+  </tr>
+  
+ </table>
+</form>
+<br><br><br><br><br><br><br>
 <%@ include file="Footer.jsp"%>
 
 </body>
