@@ -11,8 +11,7 @@
 <body>
 
 <%@ include file="Header.jsp"%>
-<h1 align="center">Login Page</h1>
-
+<h2 align="center">Sign In </h2>
 
 <%@ include file="Footer.jsp"%>
 
