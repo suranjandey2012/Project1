@@ -8,6 +8,9 @@
 </head>
 <body>
 <%@ include file="Header.jsp"%>
+<h1><center>UserHome Page</center></h1>
+<footer>
 <%@ include file="Footer.jsp"%>
+</footer>
 </body>
 </html>

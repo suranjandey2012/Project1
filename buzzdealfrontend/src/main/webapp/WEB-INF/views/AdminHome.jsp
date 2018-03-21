@@ -7,7 +7,11 @@
 <title>Admin Page</title>
 </head>
 <body>
+
 <%@ include file="Header.jsp"%>
+<h1><center>AdminHome Page</center></h1>
+<footer>
 <%@ include file="Footer.jsp"%>
+</footer>
 </body>
 </html>
