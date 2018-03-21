@@ -36,19 +36,38 @@
 
 <div class="container">
 <nav class="navbar navbar-inverse">
-  
+  <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">BuzzDeal</a>
     </div>
+    <c:if test="${!sessionScope.loggedIn}">
     <ul class="nav navbar-nav">
       <li><a href="index">Home</a></li>
       <li><a href="login">Login</a></li>
       <li><a href="register">Register</a></li>
       <li><a href="aboutus">AboutUs</a></li>
       <li><a href="contactus">ContactUs</a></li>
-      <li><a href="category">Category Page</a></li>
-      <li><a href="product">Product Page</a></li>
-    </ul>
+     </ul>
+    </c:if>
+    
+    <c:if test="${sessionScope.loggedIn}">
+         <c:if test="${sessionScope.role=='ROLE_ADMIN'}">
+         <ul class="nav navbar-nav">
+         <li><a href="index">Home</a></li>
+          <li><a href="category">Category Page</a></li>
+          <li><a href="product">Product Page</a></li>
+         </ul>
+         </c:if>
+         
+         <c:if test="${sessionScope.role=='ROLE_USER'}">
+         <ul class="nav navbar-nav">
+         <li><a href="index">Home</a></li>
+         </ul>
+         </c:if>
+   
+   </c:if>
+    
+    </div>
 </nav>
 </div>
 
