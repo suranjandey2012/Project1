@@ -11,26 +11,26 @@
 <body>
 
 <%@ include file="Header.jsp"%>
-<h2 align="center">Sign In Here </h2>
+
 
 <form action="perform_login" method="post">
- <table align="center">
-  <tr> 
-    <td colspan="2"><center>Login Credential</center></td>
+ <table align="center" >
+  <tr bgcolor="#8EF331" height="60px"> 
+    <td colspan="2"><center><h3><b>SIGN IN</b></h3></center></td>
   </tr>
    
-   <tr>
-     <td>Username:</td>
-     <td><input type="text" name="username"/></td>
+   <tr bgcolor="#A0A09E" height="100px">
+     <td>Username</td>
+     <td><input type="text" name="username" placeholder="Username"/></td>
    </tr>
   
-  <tr>
-     <td>Password:</td>
-     <td><input type="password" name="password"/></td>
+  <tr bgcolor="#A0A09E" height="100px">
+     <td>Password</td>
+     <td><input type="password" name="password" placeholder="Password"/></td>
    </tr>
   
-  <tr>
-    <td colspan="2"><input type="submit" value="Submit"/></td>
+  <tr bgcolor="#A0A09E" height="30px">
+    <td colspan="2"><center><input type="submit" value="Login" class="btn btn-danger btn-block"/></center></td>
   </tr>
   
  </table>

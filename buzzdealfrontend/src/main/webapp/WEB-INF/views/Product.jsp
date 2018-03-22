@@ -48,15 +48,17 @@
 				<td>Product Description</td>
 				<td><form:input path="productDesc" /></td>
 			</tr>
+		
+		<!-- File Element For Image Upload  -->
+			<tr bgcolor="#EAA911">
+			<td>Product Image</td>
+			<td><form:input type="file" path="pimage"/></td>
+			</tr>
+			
 			<tr bgcolor="#EAA911">
 				<td colspan=2><center>
 						<input type="submit" value="Insert">
 					</center></td>
-			</tr>
-			<!-- File Element For Image Upload  -->
-			<tr>
-			<td>Product Image</td>
-			<td><form:input type="file" path="pimage"/></td>
 			</tr>
 			</table>
 	</form:form>
@@ -95,11 +97,12 @@
 </tr>
 </c:forEach>
 </table>	
-<br><br>
+
 
 
 	
-<%@ include file="Footer.jsp"%>	
+<br><br><br><br><br>
+<%@ include file="Footer.jsp"%>
 	
 	
 </body>

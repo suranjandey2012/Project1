@@ -138,7 +138,13 @@ public class ProductController {
 	
 	}
 	
-	
+	@RequestMapping(value="/productDesc/{productId}")
+	public String showProductDesc(@PathVariable("productId")int productId, Model m)
+	{
+		Product product=(Product) productDAO.getProduct(productId);
+		m.addAttribute("product",product);
+		return "ProductDesc";
+	}
 	
 	
 	

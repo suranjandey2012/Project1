@@ -1,9 +1,11 @@
 package net.Suranjan.Controller;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
@@ -12,9 +14,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import net.Suranjan.buzzdealbackend.dao.ProductDAO;
+import net.Suranjan.buzzdealbackend.model.Product;
+
 @Controller
 public class LoginController {
   
+	@Autowired
+	ProductDAO productDAO;
+	
   
   @RequestMapping("/login_success")
   public String successfulLogin(HttpSession session,Model m)
@@ -49,6 +57,9 @@ public class LoginController {
 				page="UserHome";
 				session.setAttribute("loggedIn", loggedIn);
 				session.setAttribute("username",username);
+				List<Product> list=productDAO.getProductlist();
+				m.addAttribute("listProducts",list);
+				
 		  }
 	  }
 	  
