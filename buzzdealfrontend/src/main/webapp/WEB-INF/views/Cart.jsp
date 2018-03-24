@@ -41,7 +41,7 @@
  </tr>
  </c:forEach>
 <tr bgcolor="#0F900E">
-   <td colspan="4">Total-Amount</td>
+   <td colspan="4">TotalAmount</td>
    <td colspan="2">${totalAmount}</td>
 </tr bgcolor="#0F900E">
 
