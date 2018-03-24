@@ -24,8 +24,17 @@
 <title>User Page</title>
 </head>
 <body>
-	<%@ include file="Header.jsp"%>
 	
+<%@ include file="Header.jsp"%>
+    
+    <div align="right">
+    <a href="logout">
+	<img src="<c:url value="/resources/images/Logout2.jpg"/>"  width="70" height="70" alt="logoutimg"/>
+	</a>
+	</div>
+
+	
+
 	<!-- Carousel -->
 	
 	<div class="container" align="center">

@@ -12,6 +12,8 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import net.Suranjan.buzzdealbackend.dao.CartDAO;
+import net.Suranjan.buzzdealbackend.dao.CartDAOImpl;
 import net.Suranjan.buzzdealbackend.dao.CategoryDAO;
 import net.Suranjan.buzzdealbackend.dao.CategoryDAOImpl;
 import net.Suranjan.buzzdealbackend.dao.ProductDAO;
@@ -20,6 +22,7 @@ import net.Suranjan.buzzdealbackend.dao.SupplierDAO;
 import net.Suranjan.buzzdealbackend.dao.SupplierDAOImpl;
 import net.Suranjan.buzzdealbackend.dao.UserDetailsDAO;
 import net.Suranjan.buzzdealbackend.dao.UserDetailsDAOImpl;
+import net.Suranjan.buzzdealbackend.model.Cart;
 import net.Suranjan.buzzdealbackend.model.Category;
 import net.Suranjan.buzzdealbackend.model.Product;
 import net.Suranjan.buzzdealbackend.model.Supplier;
@@ -59,6 +62,7 @@ public class DbConfig {
 		factory.addAnnotatedClass(Supplier.class);
 		factory.addAnnotatedClass(Product.class);
 		factory.addAnnotatedClass(UserDetails.class);
+		factory.addAnnotatedClass(Cart.class);
 		SessionFactory sessionFactory=factory.buildSessionFactory();
 		System.out.println("----SessionFactory Object Created------");	
 		return sessionFactory;
@@ -75,22 +79,32 @@ public class DbConfig {
 	@Bean(name="supplierDAO")
 	public SupplierDAO getSupplierDAO()
 	{
+		System.out.println("---Supplier Bean Created---");
 		return new SupplierDAOImpl();
 	}
 	
 	@Bean(name="productDAO")
 	public ProductDAO getProductDAO()
 	{
+		System.out.println("---Product Bean Created---");
 		return new ProductDAOImpl();
 	}
 	
 	@Bean(name="userDetailsDAO")
 	public UserDetailsDAO getUserDetailsDAO()
 	{
+		System.out.println("---UserDetails Bean Created---");
 		return new UserDetailsDAOImpl();
 			
 	}
 	
+	@Bean(name="cartDAO")
+	public CartDAO getCartDAO()
+	{
+		System.out.println("---Cart Bean Created---");
+		return new CartDAOImpl();
+			
+	}
 	
 	@Bean(name="txManager")
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory)

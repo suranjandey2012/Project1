@@ -14,7 +14,7 @@
 
 
 <form action="perform_login" method="post">
- <table align="center" >
+ <table align="center" width=400px>
   <tr bgcolor="#8EF331" height="60px"> 
     <td colspan="2"><center><h3><b>SIGN IN</b></h3></center></td>
   </tr>
@@ -23,7 +23,6 @@
      <td>Username</td>
      <td><input type="text" name="username" placeholder="Username"/></td>
    </tr>
-  
   <tr bgcolor="#A0A09E" height="100px">
      <td>Password</td>
      <td><input type="password" name="password" placeholder="Password"/></td>

@@ -12,6 +12,7 @@
 	<%@ include file="Header.jsp"%>
 	
 	<div class="container">
+	<form action="<c:url value='/addToCart/${product.productId}'/>" method="post">
 		<table class="table">
 			<tr>
 				<td rowspan="9">
@@ -71,6 +72,7 @@
 
 
 		</table>
+	</form>	
 	</div>
 	<br>
 	<br>

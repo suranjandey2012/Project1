@@ -9,7 +9,17 @@
 <body>
 
 <%@ include file="Header.jsp"%>
+
+<div align="right">
+	
+	<a href="logout">
+	<img src="<c:url value="/resources/images/Logout2.jpg"/>"  width="70" height="70" alt="logoutimg"/>
+	</a>
+</div>
+
+
 <h1><center>AdminHome Page</center></h1>
+
 <footer>
 <%@ include file="Footer.jsp"%>
 </footer>
