@@ -16,6 +16,8 @@ import net.Suranjan.buzzdealbackend.dao.CartDAO;
 import net.Suranjan.buzzdealbackend.dao.CartDAOImpl;
 import net.Suranjan.buzzdealbackend.dao.CategoryDAO;
 import net.Suranjan.buzzdealbackend.dao.CategoryDAOImpl;
+import net.Suranjan.buzzdealbackend.dao.OrderDAO;
+import net.Suranjan.buzzdealbackend.dao.OrderDAOImpl;
 import net.Suranjan.buzzdealbackend.dao.ProductDAO;
 import net.Suranjan.buzzdealbackend.dao.ProductDAOImpl;
 import net.Suranjan.buzzdealbackend.dao.SupplierDAO;
@@ -24,6 +26,7 @@ import net.Suranjan.buzzdealbackend.dao.UserDetailsDAO;
 import net.Suranjan.buzzdealbackend.dao.UserDetailsDAOImpl;
 import net.Suranjan.buzzdealbackend.model.Cart;
 import net.Suranjan.buzzdealbackend.model.Category;
+import net.Suranjan.buzzdealbackend.model.OrderDetail;
 import net.Suranjan.buzzdealbackend.model.Product;
 import net.Suranjan.buzzdealbackend.model.Supplier;
 import net.Suranjan.buzzdealbackend.model.UserDetails;
@@ -63,6 +66,7 @@ public class DbConfig {
 		factory.addAnnotatedClass(Product.class);
 		factory.addAnnotatedClass(UserDetails.class);
 		factory.addAnnotatedClass(Cart.class);
+		factory.addAnnotatedClass(OrderDetail.class);
 		SessionFactory sessionFactory=factory.buildSessionFactory();
 		System.out.println("----SessionFactory Object Created------");	
 		return sessionFactory;
@@ -104,6 +108,13 @@ public class DbConfig {
 		System.out.println("---Cart Bean Created---");
 		return new CartDAOImpl();
 			
+	}
+	
+	@Bean(name="orderDAO")
+	public OrderDAO getOrderDAO()
+	{
+		System.out.println("---OrderDAO Bean Created---");
+		return new OrderDAOImpl();	
 	}
 	
 	@Bean(name="txManager")

@@ -62,6 +62,7 @@
          <c:if test="${sessionScope.role=='ROLE_USER'}">
          <ul class="nav navbar-nav">
          <li><a href="index">Home</a></li>
+         <li><a href="Cart">${cartsize}<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
          </ul>
          </c:if>
    

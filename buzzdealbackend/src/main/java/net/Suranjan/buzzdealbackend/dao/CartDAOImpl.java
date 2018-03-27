@@ -64,10 +64,12 @@ public class CartDAOImpl implements CartDAO{
 		}
 	}
 	@Override
-	public List<Cart> listCartItems() {
+	public List<Cart> listCartItems(String username) {
 		
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from Cart");
+		Query query=session.createQuery("from Cart where status=:paidstatus and username=:username1");
+		query.setParameter("paidstatus","NP");
+		query.setParameter("username1",username);
 		List<Cart> listCart=query.list();
 		
 		 for(Cart c:listCart)

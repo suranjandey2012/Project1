@@ -24,19 +24,33 @@ public class CartController {
 	@Autowired
 	CartDAO cartDAO;
 	
+	@RequestMapping(value="/Cart")
+	public String showCart(HttpSession session,Model m)
+	{
+		String username=(String)session.getAttribute("username");
+		List<Cart> listCartItems=cartDAO.listCartItems(username);
+		m.addAttribute("cartItems",listCartItems);
+		m.addAttribute("totalAmount",this.calcTotalAmount(listCartItems));
+		m.addAttribute("cartsize",listCartItems.size());
+		return "Cart";
+		
+	}
+	
 	@RequestMapping(value="/addToCart/{productId}")
 	public String addToCart(@PathVariable("productId")int productId,@RequestParam("quantity")int quantity,HttpSession session,Model m)
 	{
 		Cart cart=new Cart();
+		
+		String username=(String)session.getAttribute("username");
 		cart.setProductId(productId);
 		cart.setProductName(productDAO.getProduct(productId).getProductName());
 		cart.setQuantity(quantity);
 		cart.setPrice(productDAO.getProduct(productId).getPrice());
 		cart.setStatus("NP");
-		cart.setUsername((String)session.getAttribute("username"));
+		cart.setUsername(username);
 		cartDAO.addToCart(cart);
 		
-		List<Cart> listCartItems=cartDAO.listCartItems();
+		List<Cart> listCartItems=cartDAO.listCartItems(username);
 		m.addAttribute("cartItems",listCartItems);
 		m.addAttribute("totalAmount",this.calcTotalAmount(listCartItems));
 		return "Cart";
@@ -46,11 +60,12 @@ public class CartController {
 	@RequestMapping(value="/updateCartItem/{cartItemId}")
 	public String updateCartItem(@PathVariable("cartItemId")int cartItemId,@RequestParam("quantity")int quantity,HttpSession session,Model m)
 	{
+		String username=(String)session.getAttribute("username");
 		Cart cart=cartDAO.getCartItem(cartItemId);
 		cart.setQuantity(quantity);
 		cartDAO.updateItemFromCart(cart);
 		
-		List<Cart> listCartItems=cartDAO.listCartItems();
+		List<Cart> listCartItems=cartDAO.listCartItems(username);
 		m.addAttribute("cartItems",listCartItems);
 		m.addAttribute("totalAmount",this.calcTotalAmount(listCartItems));
 		return "Cart";
@@ -61,10 +76,12 @@ public class CartController {
 	@RequestMapping(value="/deleteCartItem/{cartItemId}")
 	public String deleteCartItem(@PathVariable("cartItemId")int cartItemId,HttpSession session,Model m)
 	{
+		
+		String username=(String)session.getAttribute("username");
 		Cart cart=cartDAO.getCartItem(cartItemId);
 		cartDAO.deleteItemFromCart(cart);
 		
-		List<Cart> listCartItems=cartDAO.listCartItems();
+		List<Cart> listCartItems=cartDAO.listCartItems(username);
 		m.addAttribute("cartItems",listCartItems);
 		m.addAttribute("totalAmount",this.calcTotalAmount(listCartItems));
 		return "Cart";

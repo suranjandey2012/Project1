@@ -16,12 +16,12 @@
 <div class="container">
 <table align="center"  class="table">
 <tr bgcolor="#0F900E">
-<td>Product Id</td>
-<td>Product Name</td>
-<td>Quantity</td>
-<td>Price</td>
-<td>Total Price</td>
-<td>Operation</td>
+<td><b>Product Id</b></td>
+<td><b>Product Name</b></td>
+<td><b>Quantity</b></td>
+<td><b>Price</b></td>
+<td><b>Total Price</b></td>
+<td><b>Operation</b></td>
 </tr>
 
 

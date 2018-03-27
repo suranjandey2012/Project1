@@ -66,7 +66,7 @@ public class CartDAOTest {
 	@Test
 	public void listCartItems()
 	{
-		List<Cart> listCartItems=cartDAO.listCartItems();
+		List<Cart> listCartItems=cartDAO.listCartItems("Samir");
 		assertNotNull("Problems In Loading CartItems", listCartItems);
 	}
 }

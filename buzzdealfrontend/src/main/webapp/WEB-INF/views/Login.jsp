@@ -20,11 +20,11 @@
   </tr>
    
    <tr bgcolor="#A0A09E" height="100px">
-     <td>Username</td>
+     <td><b>Username</b></td>
      <td><input type="text" name="username" placeholder="Username"/></td>
    </tr>
   <tr bgcolor="#A0A09E" height="100px">
-     <td>Password</td>
+     <td><b>Password</b></td>
      <td><input type="password" name="password" placeholder="Password"/></td>
    </tr>
   
