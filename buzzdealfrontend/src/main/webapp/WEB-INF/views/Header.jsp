@@ -56,6 +56,7 @@
          <li><a href="index">Home</a></li>
           <li><a href="category">Category Page</a></li>
           <li><a href="product">Product Page</a></li>
+          <li><a href="supplier">Supplier Page</a></li>
          </ul>
          </c:if>
          

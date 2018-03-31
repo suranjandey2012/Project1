@@ -36,7 +36,29 @@ public class RegisterController {
 		
 	}
 	
+	@RequestMapping(value="/UpdateUser")
+	public String showUpdateUserPage()
+	{
+		return "UpdateUser";
+	}
 	
+	@RequestMapping(value="/updateUser",method=RequestMethod.POST)
+	public String UpdateUser(@RequestParam("username")String username,@RequestParam("newpassword")String password,@RequestParam("newemailId")String emailId,@RequestParam("newaddress")String address){
+		
+		UserDetails user=(UserDetails)userDetailsDAO.getUser(username);
+		String custname=user.getCustomerName();
+		user.setPassword(password);
+		user.setCustomerName(custname);
+		user.setEmailId(emailId);
+		user.setAddress(address);
+		user.setEnabled(true);
+		user.setRole("ROLE_USER");
+		
+		userDetailsDAO.UpdateUser(user);
+		
+		return "Login";
+		
+	}
 	
 	
 	

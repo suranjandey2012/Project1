@@ -8,6 +8,7 @@
 <body>
 <%@ include file="Header.jsp"%>
 <h3 align="center">Thank You For Shopping</h3>
-<h3 align="center">Visit Again</h3>
+<h3 align="center">Your Product will be delivered to you within few days</h3>
+<h3 align="center">Visit Us Again</h3>
 </body>
 </html>

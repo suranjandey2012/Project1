@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Register Page</title>
+<title>Update User</title>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box}
@@ -80,41 +80,38 @@ button:hover {
 }
 </style>
 
-
 </head>
 <body>
 <%@ include file="Header.jsp"%>
 <br>
 <div>
-<form action="registerUser" method="post" modelAttribute="UserDetails" style="border:1px solid #ccc">
+<form action="updateUser" method="post" modelAttribute="UserDetails" style="border:1px solid #ccc">
   <div class="container">
-    <h1>Sign Up</h1>
-    <p>Please fill in this form to create an account.</p>
+    <h1>Update Account</h1>
+    <p>Please fill in this form to update your account</p>
     <hr>
 
     <label for="username"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="username" required>
 
     <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+    <input type="password" placeholder="Enter New Password" name="newpassword" required>
 
-     <label for="CustomerName"><b>Customer Name</b></label>
-     <input type="text" placeholder="Enter your name" name="CustomerName" required>
      
      <label for="emailId"><b>EmailId</b></label>
-     <input type="text" placeholder="Enter your emailId" name="emailId">
+     <input type="text" placeholder="Enter your new emailId" name="newemailId">
      
       <label for="address"><b>Address</b></label>
-     <input type="text" placeholder="Enter your address" name="address" required>
+     <input type="text" placeholder="Enter your new address" name="newaddress" required>
      
           
      <div class="clearfix">
-    <button type="submit" class="signupbtn">Sign Up</button>
+    <button type="submit" class="signupbtn">Account Update</button>
     </div>
   </div>
 </form>
 
-<p><b>Click To Change Password & Other Details</b><a href="UpdateUser">Click</a></p>
+
 
 </div>
 <br><br><br><br><br><br>
