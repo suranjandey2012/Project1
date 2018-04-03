@@ -7,8 +7,14 @@
 </head>
 <body>
 <%@ include file="Header.jsp"%>
-<h3 align="center">Thank You For Shopping</h3>
-<h3 align="center">Your Product will be delivered to you within few days</h3>
-<h3 align="center">Visit Us Again</h3>
+<div class="jumbotron text-xs-center">
+  <h1 class="display-3" align="center">Thank You For Shopping!</h1>
+  <div align="center">
+  <img src="<c:url value="/resources/images/tick.png"/>" alt="img"/>
+  </div>
+  <p class="lead" align="center"><strong>Please check your email</strong> for further information and to track your order.</p>
+  <hr>
+  
+</div>
 </body>
 </html>

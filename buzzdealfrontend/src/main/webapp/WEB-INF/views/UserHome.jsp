@@ -14,10 +14,14 @@
  #myCarousel
 {
 
- height:300px;
- width:700px;
+  height:200px;
+ width:1000px;
  
 
+}
+
+body{
+background-color: "cyan";
 }
  
  </style> 
@@ -44,15 +48,35 @@
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+      <li data-target="#myCarousel" data-slide-to="6"></li>
     </ol>
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
         <img src="<c:url value="/resources/images/Carousel3.jpg"/>" alt="Carousel1" style="width:100%;height:300px">
       </div>
+      
+       <div class="item">
+        <img src="<c:url value="/resources/images/maincar1.jpg"/>" alt="Carousel1" style="width:100%;height:300px">
+      </div>
 
       <div class="item">
-        <img src="<c:url value="/resources/images/image6.jpg"/>" alt="Carousel2" style="width:100%;height:300px">
+        <img src="<c:url value="/resources/images/maincar2.png"/>" alt="Carousel2" style="width:100%;height:300px">
+      </div>
+    
+      <div class="item">
+        <img src="<c:url value="/resources/images/maincar3.jpg"/>" alt="Carousel3" style="width:100%; height:300px">
+      </div>
+      
+      <div class="item">
+        <img src="<c:url value="/resources/images/maincar4.png"/>" alt="Carousel3" style="width:100%; height:300px">
+      </div>
+      
+      <div class="item">
+        <img src="<c:url value="/resources/images/maincar5.png"/>" alt="Carousel3" style="width:100%; height:300px">
       </div>
     
       <div class="item">
@@ -73,6 +97,10 @@
 </div>
 
 
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
