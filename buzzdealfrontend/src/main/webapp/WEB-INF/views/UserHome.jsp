@@ -20,9 +20,10 @@
 
 }
 
-body{
-background-color: "cyan";
+body {
+	background: #eee !important;	
 }
+
  
  </style> 
 <title>User Page</title>

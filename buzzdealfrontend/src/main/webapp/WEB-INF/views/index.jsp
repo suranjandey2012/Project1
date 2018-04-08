@@ -15,6 +15,11 @@
  
 
 }
+
+body {
+	background: #eee !important;	
+}
+
  
  </style> 
 </head>
