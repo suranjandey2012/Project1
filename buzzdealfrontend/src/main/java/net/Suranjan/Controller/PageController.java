@@ -42,5 +42,12 @@ public class PageController {
 		return "index";
 	}
 	
+	@RequestMapping("/AdminHome")
+    public String showBackAdminHomePage()
+	{
+		return "AdminHome";
+	}
+	
+			
 	
 }

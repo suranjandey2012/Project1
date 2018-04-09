@@ -53,7 +53,7 @@
     <c:if test="${sessionScope.loggedIn}">
          <c:if test="${sessionScope.role=='ROLE_ADMIN'}">
          <ul class="nav navbar-nav">
-         <li><a href="index">Home</a></li>
+         <li><a href="AdminHome">Home</a></li>
           <li><a href="category">Category Page</a></li>
           <li><a href="product">Product Page</a></li>
           <li><a href="supplier">Supplier Page</a></li>
@@ -62,7 +62,7 @@
          
          <c:if test="${sessionScope.role=='ROLE_USER'}">
          <ul class="nav navbar-nav">
-         <li><a href="index">Home</a></li>
+         <li><a href="UserHome">Home</a></li>
          <li><a href="Cart">${cartsize}<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
          </ul>
          </c:if>
